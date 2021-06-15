@@ -22,7 +22,6 @@ namespace Calculator_OOP
         {
             if (txtbox_result.Text == "0")
             {
-
             }
             else
             {
@@ -138,6 +137,106 @@ namespace Calculator_OOP
             {
                txtbox_result.Text += ".";
             }
+        }
+
+        //declare variables
+        double num1;
+        double num2 = 0;
+        double result;
+        string op = "";
+
+        //operations
+        private void btn_add_Click(object sender, EventArgs e)
+        {
+            op = "+";
+            if (num1 == 0)
+            {
+                num1 = double.Parse(txtbox_result.Text);
+                txtbox_result.Text = "0";
+                label_op.Text = num1.ToString() + op;
+            }
+            else
+            {
+                num2 = double.Parse(txtbox_result.Text);
+                calculate newnum = new calculate(num1, num2, op);
+                result = newnum.calculation();
+                label_op.Text = result.ToString() + "+";
+                txtbox_result.Text = "0";
+                num1 = result;
+            }
+        }
+
+        private void btn_subtract_Click(object sender, EventArgs e)
+        {
+            op = "-";
+            if (num1 == 0)
+            {
+                num1 = double.Parse(txtbox_result.Text);
+                txtbox_result.Text = "0";
+                label_op.Text = num1.ToString() + op;
+            }
+            else
+            {
+                num2 = double.Parse(txtbox_result.Text);
+                calculate newnum = new calculate(num1, num2, op);
+                result = newnum.calculation();
+                label_op.Text = result.ToString() + "-";
+                txtbox_result.Text = "0";
+                num1 = result;
+            }
+        }
+
+        private void btn_multiply_Click(object sender, EventArgs e)
+        {
+            op = "*";
+            if (num1 == 0)
+            {
+                num1 = double.Parse(txtbox_result.Text);
+                txtbox_result.Text = "0";
+                label_op.Text = num1.ToString() + op;
+            }
+            else
+            {
+                num2 = double.Parse(txtbox_result.Text);
+                calculate newnum = new calculate(num1, num2, op);
+                result = newnum.calculation();
+                label_op.Text = result.ToString() + "*";
+                txtbox_result.Text = "0";
+                num1 = result;
+            }
+        }
+
+        private void btn_divide_Click(object sender, EventArgs e)
+        {
+            op = "/";
+            if (num1 == 0)
+            {
+                num1 = double.Parse(txtbox_result.Text);
+                txtbox_result.Text = "0";
+                label_op.Text = num1.ToString() + op;
+            }
+            else
+            {
+                num2 = double.Parse(txtbox_result.Text);
+                calculate newnum = new calculate(num1, num2, op);
+                result = newnum.calculation();
+                label_op.Text = result.ToString() + "/";
+                txtbox_result.Text = "0";
+                num1 = result;
+            }
+        }
+
+        // equal button
+        private void btn_equal_Click(object sender, EventArgs e)
+        {
+            num2 = double.Parse(txtbox_result.Text);
+            calculate newnum = new calculate(num1, num2, op);
+            result = newnum.calculation();
+            label_op.Text = num1.ToString() + op + num2.ToString() + "=";
+            txtbox_result.Text = result.ToString();
+
+            num1 = 0;
+            num2 = 0;
         }
     }
 }
