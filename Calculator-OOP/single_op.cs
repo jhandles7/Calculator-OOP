@@ -20,6 +20,10 @@ namespace Calculator_OOP
                 num *= -1;
                 result = num;
             }
+            if (single_operation == "/")
+            {
+                result = 1 / num;
+            }
             return result;
         }
 

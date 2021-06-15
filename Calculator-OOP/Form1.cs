@@ -147,87 +147,140 @@ namespace Calculator_OOP
 
         //operations
         private void btn_add_Click(object sender, EventArgs e)
-        {      
-            if (num1 == 0)
+        {
+            try
             {
-                op = "+";
-                num1 = double.Parse(txtbox_result.Text);
-                txtbox_result.Text = "0";
-                label_op.Text = num1.ToString() + op;
+                if (num1 == 0)
+                {
+                    op = "+";
+                    num1 = double.Parse(txtbox_result.Text);
+                    txtbox_result.Text = "0";
+                    label_op.Text = num1.ToString() + op;
+                }
+                else
+                {
+                    num2 = double.Parse(txtbox_result.Text);
+                    calculate newnum = new calculate(num1, num2, op);
+                    result = newnum.calculation();
+                    op = "+";
+                    label_op.Text = result.ToString() + "+";
+                    txtbox_result.Text = "0";
+                    num1 = result;
+                }
             }
-            else
+            catch (Exception)
             {
-                num2 = double.Parse(txtbox_result.Text);
-                calculate newnum = new calculate(num1, num2, op);
-                result = newnum.calculation();
-                op = "+";
-                label_op.Text = result.ToString() + "+";
                 txtbox_result.Text = "0";
-                num1 = result;
-            }
+                label_op.Text = "";
+                num1 = 0;
+                num2 = 0;
+                result = 0;
+            }    
         }
 
         private void btn_subtract_Click(object sender, EventArgs e)
-        {       
-            if (num1 == 0)
+        {
+            try
             {
-                op = "-";
-                num1 = double.Parse(txtbox_result.Text);
-                txtbox_result.Text = "0";
-                label_op.Text = num1.ToString() + op;
+                if (num1 == 0)
+                {
+                    op = "-";
+                    num1 = double.Parse(txtbox_result.Text);
+                    txtbox_result.Text = "0";
+                    label_op.Text = num1.ToString() + op;
+                }
+                else
+                {
+
+                    num2 = double.Parse(txtbox_result.Text);
+                    calculate newnum = new calculate(num1, num2, op);
+                    result = newnum.calculation();
+                    op = "-";
+                    label_op.Text = result.ToString() + "-";
+                    txtbox_result.Text = "0";
+                    num1 = result;
+                }
             }
-            else
+            catch (Exception)
             {
-               
-                num2 = double.Parse(txtbox_result.Text);
-                calculate newnum = new calculate(num1, num2, op);
-                result = newnum.calculation();
-                op = "-";
-                label_op.Text = result.ToString() + "-";
                 txtbox_result.Text = "0";
-                num1 = result;
+                label_op.Text = "";
+                num1 = 0;
+                num2 = 0;
+                result = 0;
             }
         }
 
         private void btn_multiply_Click(object sender, EventArgs e)
         {
-            if (num1 == 0)
+            try
             {
-                op = "*";
-                num1 = double.Parse(txtbox_result.Text);
-                txtbox_result.Text = "0";
-                label_op.Text = num1.ToString() + op;
+                if (num1 == 0)
+                {
+                    op = "*";
+                    num1 = double.Parse(txtbox_result.Text);
+                    txtbox_result.Text = "0";
+                    label_op.Text = num1.ToString() + op;
+                }
+                else
+                {
+                    num2 = double.Parse(txtbox_result.Text);
+                    calculate newnum = new calculate(num1, num2, op);
+                    result = newnum.calculation();
+                    op = "*";
+                    label_op.Text = result.ToString() + "*";
+                    txtbox_result.Text = "0";
+                    num1 = result;
+                }
             }
-            else
+            catch (Exception)
             {
-                num2 = double.Parse(txtbox_result.Text);
-                calculate newnum = new calculate(num1, num2, op);
-                result = newnum.calculation();
-                op = "*";
-                label_op.Text = result.ToString() + "*";
                 txtbox_result.Text = "0";
-                num1 = result;
+                label_op.Text = "";
+                num1 = 0;
+                num2 = 0;
+                result = 0;
             }
+         
         }
 
         private void btn_divide_Click(object sender, EventArgs e)
-        {         
-            if (num1 == 0)
+        {
+            try
             {
-                op = "/";
-                num1 = double.Parse(txtbox_result.Text);
-                txtbox_result.Text = "0";
-                label_op.Text = num1.ToString() + op;
+                if (num1 == 0)
+                {
+                    op = "/";
+                    num1 = double.Parse(txtbox_result.Text);
+                    txtbox_result.Text = "0";
+                    label_op.Text = num1.ToString() + op;
+                }
+                else
+                {
+                    num2 = double.Parse(txtbox_result.Text);
+                    if (num2 != 0)
+                    {
+                        calculate newnum = new calculate(num1, num2, op);
+                        result = newnum.calculation();
+                        op = "/";
+                        label_op.Text = result.ToString() + "/";
+                        txtbox_result.Text = "0";
+                        num1 = result;
+                    }
+                    else
+                    {
+                        txtbox_result.Text = "Can't Divide by 0";
+                        label_op.Text = num1.ToString() + "/" + num2.ToString();
+                    }
+                }
             }
-            else
+            catch (Exception)
             {
-                num2 = double.Parse(txtbox_result.Text);
-                calculate newnum = new calculate(num1, num2, op);
-                result = newnum.calculation();
-                op = "/";
-                label_op.Text = result.ToString() + "/";
                 txtbox_result.Text = "0";
-                num1 = result;
+                label_op.Text = "";
+                num1 = 0;
+                num2 = 0;
+                result = 0;
             }
         }
 
@@ -239,6 +292,10 @@ namespace Calculator_OOP
             result = newnum.calculation();
             label_op.Text = num1.ToString() + op + num2.ToString() + "=";
             txtbox_result.Text = result.ToString();
+            if (txtbox_result.Text == "∞")
+            {
+                txtbox_result.Text = "Can't Divide by 0";
+            }
 
             num1 = 0;
             num2 = 0;
@@ -260,6 +317,20 @@ namespace Calculator_OOP
             else
             {
                 txtbox_result.Text = result.ToString();
+            }
+        }
+
+        private void btn_1overx_Click(object sender, EventArgs e)
+        {
+            single_operation = "/";
+            num = double.Parse(txtbox_result.Text);
+            single_op newnum = new single_op(num, single_operation);
+            result = newnum.operation();
+            txtbox_result.Text = result.ToString();
+            if (txtbox_result.Text == "∞")
+            {
+                txtbox_result.Text = "Can't Divide by 0";
+                label_op.Text = "1/" + num.ToString();
             }
         }
     }

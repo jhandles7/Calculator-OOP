@@ -259,6 +259,7 @@ namespace Calculator_OOP
             this.btn_1overx.TabIndex = 12;
             this.btn_1overx.Text = "1/x";
             this.btn_1overx.UseVisualStyleBackColor = false;
+            this.btn_1overx.Click += new System.EventHandler(this.btn_1overx_Click);
             // 
             // btn_decimal
             // 

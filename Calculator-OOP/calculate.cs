@@ -31,6 +31,7 @@ namespace Calculator_OOP
             }
             if (op == "/")
             {
+
                 result = num1 / num2;
             }
             return result;
