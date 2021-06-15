@@ -148,18 +148,21 @@ namespace Calculator_OOP
         //operations
         private void btn_add_Click(object sender, EventArgs e)
         {
-            op = "+";
+            
             if (num1 == 0)
             {
+                op = "+";
                 num1 = double.Parse(txtbox_result.Text);
                 txtbox_result.Text = "0";
                 label_op.Text = num1.ToString() + op;
             }
             else
             {
+                
                 num2 = double.Parse(txtbox_result.Text);
                 calculate newnum = new calculate(num1, num2, op);
                 result = newnum.calculation();
+                op = "+";
                 label_op.Text = result.ToString() + "+";
                 txtbox_result.Text = "0";
                 num1 = result;
@@ -168,18 +171,21 @@ namespace Calculator_OOP
 
         private void btn_subtract_Click(object sender, EventArgs e)
         {
-            op = "-";
+           
             if (num1 == 0)
             {
+                op = "-";
                 num1 = double.Parse(txtbox_result.Text);
                 txtbox_result.Text = "0";
                 label_op.Text = num1.ToString() + op;
             }
             else
             {
+               
                 num2 = double.Parse(txtbox_result.Text);
                 calculate newnum = new calculate(num1, num2, op);
                 result = newnum.calculation();
+                op = "-";
                 label_op.Text = result.ToString() + "-";
                 txtbox_result.Text = "0";
                 num1 = result;
@@ -188,9 +194,10 @@ namespace Calculator_OOP
 
         private void btn_multiply_Click(object sender, EventArgs e)
         {
-            op = "*";
+
             if (num1 == 0)
             {
+                op = "*";
                 num1 = double.Parse(txtbox_result.Text);
                 txtbox_result.Text = "0";
                 label_op.Text = num1.ToString() + op;
@@ -200,6 +207,7 @@ namespace Calculator_OOP
                 num2 = double.Parse(txtbox_result.Text);
                 calculate newnum = new calculate(num1, num2, op);
                 result = newnum.calculation();
+                op = "*";
                 label_op.Text = result.ToString() + "*";
                 txtbox_result.Text = "0";
                 num1 = result;
@@ -208,9 +216,10 @@ namespace Calculator_OOP
 
         private void btn_divide_Click(object sender, EventArgs e)
         {
-            op = "/";
+            
             if (num1 == 0)
             {
+                op = "/";
                 num1 = double.Parse(txtbox_result.Text);
                 txtbox_result.Text = "0";
                 label_op.Text = num1.ToString() + op;
@@ -220,6 +229,7 @@ namespace Calculator_OOP
                 num2 = double.Parse(txtbox_result.Text);
                 calculate newnum = new calculate(num1, num2, op);
                 result = newnum.calculation();
+                op = "/";
                 label_op.Text = result.ToString() + "/";
                 txtbox_result.Text = "0";
                 num1 = result;
