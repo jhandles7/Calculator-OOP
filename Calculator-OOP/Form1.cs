@@ -147,8 +147,7 @@ namespace Calculator_OOP
 
         //operations
         private void btn_add_Click(object sender, EventArgs e)
-        {
-            
+        {      
             if (num1 == 0)
             {
                 op = "+";
@@ -158,7 +157,6 @@ namespace Calculator_OOP
             }
             else
             {
-                
                 num2 = double.Parse(txtbox_result.Text);
                 calculate newnum = new calculate(num1, num2, op);
                 result = newnum.calculation();
@@ -170,8 +168,7 @@ namespace Calculator_OOP
         }
 
         private void btn_subtract_Click(object sender, EventArgs e)
-        {
-           
+        {       
             if (num1 == 0)
             {
                 op = "-";
@@ -194,7 +191,6 @@ namespace Calculator_OOP
 
         private void btn_multiply_Click(object sender, EventArgs e)
         {
-
             if (num1 == 0)
             {
                 op = "*";
@@ -215,8 +211,7 @@ namespace Calculator_OOP
         }
 
         private void btn_divide_Click(object sender, EventArgs e)
-        {
-            
+        {         
             if (num1 == 0)
             {
                 op = "/";
@@ -247,6 +242,25 @@ namespace Calculator_OOP
 
             num1 = 0;
             num2 = 0;
+        }
+
+        //single operation
+        string single_operation = "";
+        double num;
+        private void btn_negative_Click(object sender, EventArgs e)
+        {
+            single_operation = "-";
+            num = double.Parse(txtbox_result.Text);
+            single_op newnum = new single_op(num, single_operation);
+            result = newnum.operation();
+            if (txtbox_result.Text.Substring(0) == "0")
+            {
+                txtbox_result.Text = result.ToString().Remove(1);
+            }
+            else
+            {
+                txtbox_result.Text = result.ToString();
+            }
         }
     }
 }

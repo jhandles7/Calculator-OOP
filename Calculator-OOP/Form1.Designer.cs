@@ -287,6 +287,7 @@ namespace Calculator_OOP
             this.btn_negative.Size = new System.Drawing.Size(57, 37);
             this.btn_negative.TabIndex = 10;
             this.btn_negative.UseVisualStyleBackColor = false;
+            this.btn_negative.Click += new System.EventHandler(this.btn_negative_Click);
             // 
             // btn_num0
             // 

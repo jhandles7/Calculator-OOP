@@ -13,6 +13,7 @@ namespace Calculator_OOP
         private double num2;
         private string op;
         private double result;
+        
 
         public double calculation()
         {
@@ -60,6 +61,7 @@ namespace Calculator_OOP
         {
             return result;
         }
+       
 
         //settters
         public void setnum1(double num1)
@@ -78,6 +80,7 @@ namespace Calculator_OOP
         {
             this.result = result;
         }
+        
     }
 
 }
