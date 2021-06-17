@@ -333,5 +333,32 @@ namespace Calculator_OOP
                 label_op.Text = "1/" + num.ToString();
             }
         }
+
+        private void btn_squared_Click(object sender, EventArgs e)
+        {
+            single_operation = "x*x";
+            num = double.Parse(txtbox_result.Text);
+            single_op newnum = new single_op(num, single_operation);
+            result = newnum.operation();
+            txtbox_result.Text = result.ToString();
+        }
+
+        private void btn_root_Click(object sender, EventArgs e)
+        {
+            single_operation = "√x";
+            num = double.Parse(txtbox_result.Text);
+            single_op newnum = new single_op(num, single_operation);
+            result = newnum.operation();
+            txtbox_result.Text = result.ToString();
+        }
+
+        private void btn_percent_Click(object sender, EventArgs e)
+        {
+            single_operation = "%";
+            num = double.Parse(txtbox_result.Text);
+            single_op newnum = new single_op(num, single_operation);
+            result = newnum.operation();
+            txtbox_result.Text = result.ToString();
+        }
     }
 }

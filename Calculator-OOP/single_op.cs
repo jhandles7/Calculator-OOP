@@ -22,11 +22,24 @@ namespace Calculator_OOP
             }
             if (single_operation == "/")
             {
-                result = 1 / num;
+                result = Math.Round(1 / num, 6);
+            }
+            if (single_operation == "x*x")
+            {
+                result = Math.Round(num * num, 6);
+            }
+            if (single_operation == "√x")
+            {
+                result = Math.Round(Math.Sqrt(num), 6);
+            }
+            if (single_operation == "%")
+            {
+                result = num / 100;
             }
             return result;
         }
 
+        
         //constructor
         public single_op(double num, string single_operation)
         {

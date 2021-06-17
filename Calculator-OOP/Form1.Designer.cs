@@ -218,6 +218,7 @@ namespace Calculator_OOP
             this.btn_percent.TabIndex = 15;
             this.btn_percent.Text = "%";
             this.btn_percent.UseVisualStyleBackColor = false;
+            this.btn_percent.Click += new System.EventHandler(this.btn_percent_Click);
             // 
             // btn_root
             // 
@@ -232,6 +233,7 @@ namespace Calculator_OOP
             this.btn_root.TabIndex = 14;
             this.btn_root.Text = "√x";
             this.btn_root.UseVisualStyleBackColor = false;
+            this.btn_root.Click += new System.EventHandler(this.btn_root_Click);
             // 
             // btn_squared
             // 
@@ -246,6 +248,7 @@ namespace Calculator_OOP
             this.btn_squared.TabIndex = 13;
             this.btn_squared.Text = "x²";
             this.btn_squared.UseVisualStyleBackColor = false;
+            this.btn_squared.Click += new System.EventHandler(this.btn_squared_Click);
             // 
             // btn_1overx
             // 
@@ -508,7 +511,6 @@ namespace Calculator_OOP
         private System.Windows.Forms.Button btn_ce;
         private System.Windows.Forms.Button btn_percent;
         private System.Windows.Forms.Button btn_root;
-        private System.Windows.Forms.Button btn_squared;
         private System.Windows.Forms.Button btn_1overx;
         private System.Windows.Forms.Button btn_decimal;
         private System.Windows.Forms.Button btn_negative;
@@ -522,10 +524,11 @@ namespace Calculator_OOP
         private System.Windows.Forms.Button btn_num9;
         private System.Windows.Forms.Button btn_num8;
         private System.Windows.Forms.Button btn_num7;
-        private System.Windows.Forms.TextBox txtbox_result;
         private System.Windows.Forms.Label label_operation;
         private System.Windows.Forms.Label operation_label;
         private System.Windows.Forms.Label label_op;
+        private System.Windows.Forms.Button btn_squared;
+        private System.Windows.Forms.TextBox txtbox_result;
     }
 }
 
