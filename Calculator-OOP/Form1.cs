@@ -360,5 +360,28 @@ namespace Calculator_OOP
             result = newnum.operation();
             txtbox_result.Text = result.ToString();
         }
+
+        private void btn_ce_Click(object sender, EventArgs e)
+        {
+            txtbox_result.Text = "0";
+        }
+
+        private void btn_Clear_Click(object sender, EventArgs e)
+        {
+            txtbox_result.Text = "0";
+            label_op.Text = "";
+        }
+
+        private void btn_delete_Click(object sender, EventArgs e)
+        {
+            if (txtbox_result.TextLength <=1)
+            {
+                txtbox_result.Text = "0";
+            }
+            else
+            {
+                txtbox_result.Text = txtbox_result.Text.Remove(txtbox_result.TextLength - 1);
+            }
+        }
     }
 }

@@ -176,6 +176,7 @@ namespace Calculator_OOP
             this.btn_delete.Size = new System.Drawing.Size(57, 37);
             this.btn_delete.TabIndex = 18;
             this.btn_delete.UseVisualStyleBackColor = false;
+            this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
             // 
             // btn_Clear
             // 
@@ -190,6 +191,7 @@ namespace Calculator_OOP
             this.btn_Clear.TabIndex = 17;
             this.btn_Clear.Text = "C";
             this.btn_Clear.UseVisualStyleBackColor = false;
+            this.btn_Clear.Click += new System.EventHandler(this.btn_Clear_Click);
             // 
             // btn_ce
             // 
@@ -204,6 +206,7 @@ namespace Calculator_OOP
             this.btn_ce.TabIndex = 16;
             this.btn_ce.Text = "CE";
             this.btn_ce.UseVisualStyleBackColor = false;
+            this.btn_ce.Click += new System.EventHandler(this.btn_ce_Click);
             // 
             // btn_percent
             // 
