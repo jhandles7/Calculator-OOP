@@ -324,13 +324,32 @@ namespace Calculator_OOP
         {
             single_operation = "/";
             num = double.Parse(txtbox_result.Text);
-            single_op newnum = new single_op(num, single_operation);
-            result = newnum.operation();
-            txtbox_result.Text = result.ToString();
-            if (txtbox_result.Text == "∞")
+            if (num.Equals(0))
             {
                 txtbox_result.Text = "Can't Divide by 0";
                 label_op.Text = "1/" + num.ToString();
+            }
+            else
+            {
+                if (num1 != 0)
+                {
+                    single_op newnum = new single_op(num, single_operation);
+                    result = newnum.operation();
+                    txtbox_result.Text = result.ToString();
+                    num2 = double.Parse(txtbox_result.Text);
+                    calculate newnum1 = new calculate(num1, num2, op);
+                    result = newnum1.calculation();
+                    label_op.Text = num1 + op + num2;
+                    txtbox_result.Text = result.ToString();
+                    num1 = result;
+                }
+                else
+                {
+                    single_op newnum = new single_op(num, single_operation);
+                    result = newnum.operation();
+                    txtbox_result.Text = result.ToString();
+                    label_op.Text = "1/" + num;
+                }
             }
         }
 
@@ -338,31 +357,82 @@ namespace Calculator_OOP
         {
             single_operation = "x*x";
             num = double.Parse(txtbox_result.Text);
-            single_op newnum = new single_op(num, single_operation);
-            result = newnum.operation();
-            txtbox_result.Text = result.ToString();
+            if (num1 != 0)
+            {
+                single_op newnum = new single_op(num, single_operation);
+                result = newnum.operation();
+                txtbox_result.Text = result.ToString();
+                num2 = double.Parse(txtbox_result.Text);
+                calculate newnum1 = new calculate(num1, num2, op);
+                result = newnum1.calculation();
+                label_op.Text = num1 + op + num2;
+                txtbox_result.Text = result.ToString();
+                num1 = result;
+            }
+            else
+            {
+                single_op newnum = new single_op(num, single_operation);
+                result = newnum.operation();
+                txtbox_result.Text = result.ToString();
+            }
+            
         }
 
         private void btn_root_Click(object sender, EventArgs e)
         {
             single_operation = "√x";
             num = double.Parse(txtbox_result.Text);
-            single_op newnum = new single_op(num, single_operation);
-            result = newnum.operation();
-            txtbox_result.Text = result.ToString();
+            if (num1 != 0)
+            {
+                single_op newnum = new single_op(num, single_operation);
+                result = newnum.operation();
+                txtbox_result.Text = result.ToString();
+                num2 = double.Parse(txtbox_result.Text);
+                calculate newnum1 = new calculate(num1, num2, op);
+                result = newnum1.calculation();
+                label_op.Text = num1 + op + num2;
+                txtbox_result.Text = result.ToString();
+                num1 = result;
+            }
+            else
+            {
+                label_op.Text = "√" + num.ToString();
+                single_op newnum = new single_op(num, single_operation);
+                result = newnum.operation();
+                txtbox_result.Text = result.ToString();
+            }
         }
 
         private void btn_percent_Click(object sender, EventArgs e)
         {
             single_operation = "%";
             num = double.Parse(txtbox_result.Text);
-            single_op newnum = new single_op(num, single_operation);
-            result = newnum.operation();
-            txtbox_result.Text = result.ToString();
+            if (num1 != 0)
+            {
+                single_op newnum = new single_op(num, single_operation);
+                result = newnum.operation();
+                txtbox_result.Text = result.ToString();
+                num2 = double.Parse(txtbox_result.Text);
+                calculate newnum1 = new calculate(num1, num2, op);
+                result = newnum1.calculation();
+                label_op.Text = num1 + op + num2;
+                txtbox_result.Text = result.ToString();
+                num1 = result;
+            }
+            else
+            {
+                single_op newnum = new single_op(num, single_operation);
+                result = newnum.operation();
+                txtbox_result.Text = result.ToString();
+            }
         }
 
         private void btn_ce_Click(object sender, EventArgs e)
         {
+            if (num1 != 0)
+            {
+                label_op.Text = num1.ToString();
+            }
             txtbox_result.Text = "0";
         }
 
@@ -370,6 +440,8 @@ namespace Calculator_OOP
         {
             txtbox_result.Text = "0";
             label_op.Text = "";
+            num1 = 0;
+            num2 = 0;
         }
 
         private void btn_delete_Click(object sender, EventArgs e)
