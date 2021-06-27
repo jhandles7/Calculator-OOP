@@ -20,10 +20,7 @@ namespace Calculator_OOP
         //add numbers into the textbox when num buttons clicked 
         private void btn_num0_Click(object sender, EventArgs e)
         {
-            if (txtbox_result.Text == "0")
-            {
-            }
-            else
+            if (txtbox_result.Text != "0")
             {
                 txtbox_result.Text += "0";
             }
@@ -296,7 +293,6 @@ namespace Calculator_OOP
             {
                 txtbox_result.Text = "Can't Divide by 0";
             }
-
             num1 = 0;
             num2 = 0;
         }
