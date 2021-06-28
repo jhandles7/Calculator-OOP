@@ -438,6 +438,7 @@ namespace Calculator_OOP
             // 
             // txtbox_result
             // 
+            this.txtbox_result.Enabled = false;
             this.txtbox_result.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtbox_result.Location = new System.Drawing.Point(13, 32);
             this.txtbox_result.Multiline = true;
@@ -493,6 +494,8 @@ namespace Calculator_OOP
             this.Controls.Add(this.label_operation);
             this.Controls.Add(this.txtbox_result);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Calculator";
             this.panel1.ResumeLayout(false);

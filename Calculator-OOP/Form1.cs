@@ -335,7 +335,7 @@ namespace Calculator_OOP
                     num2 = double.Parse(txtbox_result.Text);
                     calculate newnum1 = new calculate(num1, num2, op);
                     result = newnum1.calculation();
-                    label_op.Text = num1 + op + num2;
+                    label_op.Text = num1.ToString() + op + "1/" + num.ToString();
                     txtbox_result.Text = result.ToString();
                     num1 = result;
                 }
@@ -361,12 +361,13 @@ namespace Calculator_OOP
                 num2 = double.Parse(txtbox_result.Text);
                 calculate newnum1 = new calculate(num1, num2, op);
                 result = newnum1.calculation();
-                label_op.Text = num1 + op + num2;
+                label_op.Text = num1.ToString() + op + num.ToString() + "²";
                 txtbox_result.Text = result.ToString();
                 num1 = result;
             }
             else
             {
+                label_op.Text = num.ToString() + "²";
                 single_op newnum = new single_op(num, single_operation);
                 result = newnum.operation();
                 txtbox_result.Text = result.ToString();
@@ -386,7 +387,7 @@ namespace Calculator_OOP
                 num2 = double.Parse(txtbox_result.Text);
                 calculate newnum1 = new calculate(num1, num2, op);
                 result = newnum1.calculation();
-                label_op.Text = num1 + op + num2;
+                label_op.Text = num1.ToString() + op + "√" + num.ToString();
                 txtbox_result.Text = result.ToString();
                 num1 = result;
             }
@@ -411,12 +412,13 @@ namespace Calculator_OOP
                 num2 = double.Parse(txtbox_result.Text);
                 calculate newnum1 = new calculate(num1, num2, op);
                 result = newnum1.calculation();
-                label_op.Text = num1 + op + num2;
+                label_op.Text = num1.ToString() + op + num.ToString() + "%";
                 txtbox_result.Text = result.ToString();
                 num1 = result;
             }
             else
             {
+                label_op.Text = num.ToString() + "%";
                 single_op newnum = new single_op(num, single_operation);
                 result = newnum.operation();
                 txtbox_result.Text = result.ToString();
