@@ -136,6 +136,36 @@ namespace Calculator_OOP
             }
         }
 
+        private void disable_nums_and_CE_DELETE()
+        {
+            btn_num0.Enabled = false;
+            btn_num1.Enabled = false;
+            btn_num2.Enabled = false;
+            btn_num3.Enabled = false;
+            btn_num4.Enabled = false;
+            btn_num5.Enabled = false;
+            btn_num6.Enabled = false;
+            btn_num7.Enabled = false;
+            btn_num8.Enabled = false;
+            btn_num9.Enabled = false;
+            btn_delete.Enabled = false;
+            btn_ce.Enabled = false;
+        }
+        private void enable_nums_and_CE_DELETE()
+        {
+            btn_num0.Enabled = true;
+            btn_num1.Enabled = true;
+            btn_num2.Enabled = true;
+            btn_num3.Enabled = true;
+            btn_num4.Enabled = true;
+            btn_num5.Enabled = true;
+            btn_num6.Enabled = true;
+            btn_num7.Enabled = true;
+            btn_num8.Enabled = true;
+            btn_num9.Enabled = true;
+            btn_delete.Enabled = true;
+            btn_ce.Enabled = true;
+        }
         //declare variables
         double num1;
         double num2 = 0;
@@ -145,6 +175,7 @@ namespace Calculator_OOP
         //operations
         private void btn_add_Click(object sender, EventArgs e)
         {
+            enable_nums_and_CE_DELETE();
             try
             {
                 if (num1 == 0)
@@ -177,6 +208,7 @@ namespace Calculator_OOP
 
         private void btn_subtract_Click(object sender, EventArgs e)
         {
+            enable_nums_and_CE_DELETE();
             try
             {
                 if (num1 == 0)
@@ -210,6 +242,7 @@ namespace Calculator_OOP
 
         private void btn_multiply_Click(object sender, EventArgs e)
         {
+            enable_nums_and_CE_DELETE();
             try
             {
                 if (num1 == 0)
@@ -243,6 +276,7 @@ namespace Calculator_OOP
 
         private void btn_divide_Click(object sender, EventArgs e)
         {
+            enable_nums_and_CE_DELETE();
             try
             {
                 if (num1 == 0)
@@ -284,6 +318,7 @@ namespace Calculator_OOP
         // equal button
         private void btn_equal_Click(object sender, EventArgs e)
         {
+            disable_nums_and_CE_DELETE();
             num2 = double.Parse(txtbox_result.Text);
             calculate newnum = new calculate(num1, num2, op);
             result = newnum.calculation();
@@ -337,7 +372,8 @@ namespace Calculator_OOP
                     result = newnum1.calculation();
                     label_op.Text = num1.ToString() + op + "1/" + num.ToString();
                     txtbox_result.Text = result.ToString();
-                    num1 = result;
+                    num1 = 0;
+                    num2 = 0;
                 }
                 else
                 {
@@ -363,7 +399,8 @@ namespace Calculator_OOP
                 result = newnum1.calculation();
                 label_op.Text = num1.ToString() + op + num.ToString() + "²";
                 txtbox_result.Text = result.ToString();
-                num1 = result;
+                num1 = 0;
+                num2 = 0;
             }
             else
             {
@@ -389,7 +426,8 @@ namespace Calculator_OOP
                 result = newnum1.calculation();
                 label_op.Text = num1.ToString() + op + "√" + num.ToString();
                 txtbox_result.Text = result.ToString();
-                num1 = result;
+                num1 = 0;
+                num2 = 0;
             }
             else
             {
@@ -414,7 +452,8 @@ namespace Calculator_OOP
                 result = newnum1.calculation();
                 label_op.Text = num1.ToString() + op + num.ToString() + "%";
                 txtbox_result.Text = result.ToString();
-                num1 = result;
+                num1 = 0;
+                num2 = 0;
             }
             else
             {
@@ -427,6 +466,7 @@ namespace Calculator_OOP
 
         private void btn_ce_Click(object sender, EventArgs e)
         {
+            enable_nums_and_CE_DELETE();
             if (num1 != 0)
             {
                 label_op.Text = num1.ToString();
@@ -436,6 +476,7 @@ namespace Calculator_OOP
 
         private void btn_Clear_Click(object sender, EventArgs e)
         {
+            enable_nums_and_CE_DELETE();
             txtbox_result.Text = "0";
             label_op.Text = "";
             num1 = 0;
