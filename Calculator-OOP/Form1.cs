@@ -126,13 +126,9 @@ namespace Calculator_OOP
         }
         private void btn_decimal_Click(object sender, EventArgs e)
         {
-            if (txtbox_result.Text.Contains("."))
+            if (!txtbox_result.Text.Contains("."))
             {
-
-            }
-            else
-            {
-               txtbox_result.Text += ".";
+                txtbox_result.Text += ".";
             }
         }
 
@@ -271,7 +267,6 @@ namespace Calculator_OOP
                 num2 = 0;
                 result = 0;
             }
-         
         }
 
         private void btn_divide_Click(object sender, EventArgs e)
@@ -457,10 +452,8 @@ namespace Calculator_OOP
             }
             else
             {
-                label_op.Text = num.ToString() + "%";
-                single_op newnum = new single_op(num, single_operation);
-                result = newnum.operation();
-                txtbox_result.Text = result.ToString();
+                label_op.Text = "0";
+                txtbox_result.Text = "0";
             }
         }
 
@@ -469,7 +462,7 @@ namespace Calculator_OOP
             enable_nums_and_CE_DELETE();
             if (num1 != 0)
             {
-                label_op.Text = num1.ToString();
+                label_op.Text = num1.ToString() + op;
             }
             txtbox_result.Text = "0";
         }
