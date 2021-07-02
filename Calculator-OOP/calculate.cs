@@ -32,7 +32,7 @@ namespace Calculator_OOP
             if (op == "/")
             {
 
-                result = num1 / num2;
+                result = Math.Round((num1 / num2), 6);
             }
             return result;
         }
